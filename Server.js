@@ -10,126 +10,128 @@ import { fetchPriceDell } from "./Dell.js";
 const app = express();
 
 app.get('/price', async function(req, res) {
+    res.json({ CDW: '$200',CDWG:'$250',DELL:"$300",STAPLEL:"$400" })
+
     debugger;
 
-    if(req.query.id=="0")
-    {
-        let cdwPrice="Unable to fetch !";
-        let cdwgPrice="Unable to fetch !";
-        let dellPrice="Unable to fetch !";
-        let staplesPrice="Unable to fetch !";
+    // if(req.query.id=="0")
+    // {
+    //     let cdwPrice="Unable to fetch !";
+    //     let cdwgPrice="Unable to fetch !";
+    //     let dellPrice="Unable to fetch !";
+    //     let staplesPrice="Unable to fetch !";
 
-        try{
-            if(cdwPrice)
-               cdwPrice=await fetchPriceCDW(req.query.part);
+    //     try{
+    //         if(cdwPrice)
+    //            cdwPrice=await fetchPriceCDW(req.query.part);
 
-        }
-        catch(e){
+    //     }
+    //     catch(e){
 
 
-        }
-        try{
-            if(cdwgPrice)
-               cdwgPrice=await fetchPriceCDWG(req.query.part);
+    //     }
+    //     try{
+    //         if(cdwgPrice)
+    //            cdwgPrice=await fetchPriceCDWG(req.query.part);
 
-        }
-        catch(e){
+    //     }
+    //     catch(e){
 
             
-        }
-        try{
-            if(dellPrice)
-               dellPrice=await fetchPriceDell(req.query.part);
+    //     }
+    //     try{
+    //         if(dellPrice)
+    //            dellPrice=await fetchPriceDell(req.query.part);
 
-        }
-        catch(e){
+    //     }
+    //     catch(e){
             
-        }
-        try{
-            if(staplesPrice)
-                staplesPrice= await fetchPriceStapels(req.query.part);
+    //     }
+    //     try{
+    //         if(staplesPrice)
+    //             staplesPrice= await fetchPriceStapels(req.query.part);
 
-        }
-        catch(e){
+    //     }
+    //     catch(e){
             
             
-        }
-        res.status(200).send("CDW "+cdwPrice +" "+"CDWG "+cdwgPrice+ " "+"Staples "+staplesPrice+" Dell "+dellPrice);
+    //     }
+    //     res.status(200).send("CDW "+cdwPrice +" "+"CDWG "+cdwgPrice+ " "+"Staples "+staplesPrice+" Dell "+dellPrice);
 
-    }
+    // }
   
-    if(req.query.id=="1")
-    {
-        console.log("Request")
-        let price="Unable to fetch.";
-        try{
-            price=  await fetchPriceCDW(req.query.part);
-        }
-        catch (e)
-        {
+    // if(req.query.id=="1")
+    // {
+    //     console.log("Request")
+    //     let price="Unable to fetch.";
+    //     try{
+    //         price=  await fetchPriceCDW(req.query.part);
+    //     }
+    //     catch (e)
+    //     {
            
-        }
+    //     }
         
  
        
-        res.status(200).send(price)
-    }
-    if(req.query.id=="2")
-    {
-        console.log("Request")
-        let price="Unable to fetch.";
-        try{
-            price=  await fetchPriceCDWG(req.query.part);
-        }
-        catch (e)
-        {
-           
-
-        }
-        
- 
-       
-        res.status(200).send(price)
-
-    }
-
-    if(req.query.id=="3")
-    {
-        console.log("Request")
-        let price="Unable to fetch.";
-        try{
-            price=  await fetchPriceStapels(req.query.part);
-        }
-        catch (e)
-        {
+    //     res.status(200).send(price)
+    // }
+    // if(req.query.id=="2")
+    // {
+    //     console.log("Request")
+    //     let price="Unable to fetch.";
+    //     try{
+    //         price=  await fetchPriceCDWG(req.query.part);
+    //     }
+    //     catch (e)
+    //     {
            
 
-        }
+    //     }
         
  
        
-        res.status(200).send(price)
+    //     res.status(200).send(price)
 
-    }
+    // }
 
-    if(req.query.id=="4")
-    {
-        console.log("Request")
-        let price="Unable to fetch.";
-        try{
-            price=  await fetchPriceDell(req.query.part);
-        }
-        catch (e)
-        {
-            price=e;
+    // if(req.query.id=="3")
+    // {
+    //     console.log("Request")
+    //     let price="Unable to fetch.";
+    //     try{
+    //         price=  await fetchPriceStapels(req.query.part);
+    //     }
+    //     catch (e)
+    //     {
+           
 
-        }
+    //     }
         
  
        
-        res.status(200).send(price)
+    //     res.status(200).send(price)
 
-    }
+    // }
+
+    // if(req.query.id=="4")
+    // {
+    //     console.log("Request")
+    //     let price="Unable to fetch.";
+    //     try{
+    //         price=  await fetchPriceDell(req.query.part);
+    //     }
+    //     catch (e)
+    //     {
+    //         price=e;
+
+    //     }
+        
+ 
+       
+    //     res.status(200).send(price)
+
+    // }
 
     
   });
