@@ -10,7 +10,11 @@ import { fetchPriceDell } from "./Dell.js";
 const app = express();
 
 app.get('/price', async function(req, res) {
-    res.json({ CDW: '$200',CDWG:'$250',DELL:"$300",STAPLEL:"$400" })
+    res.json([
+      { value: 1,label:'Cdw',price:"300" },
+    { value: 2,label:'$Cdwg',price:"350" },
+    { value:3, label:'Dell',price:"$300" },
+    { value:4, label:'Staples',price:"300" }])
 
     debugger;
 
