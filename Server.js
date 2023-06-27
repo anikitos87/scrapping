@@ -6,7 +6,8 @@ import { fetchPriceCDW } from "./CDW.js";
 import { fetchPriceCDWG } from "./CDWG.js";
 import { fetchPriceStapels } from "./Stapels.js";
 import { fetchPriceDell } from "./Dell.js";
-var cors = require('cors')
+import cors from 'cors'
+
 
 
 const app = express();
