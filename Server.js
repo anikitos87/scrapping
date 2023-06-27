@@ -6,8 +6,11 @@ import { fetchPriceCDW } from "./CDW.js";
 import { fetchPriceCDWG } from "./CDWG.js";
 import { fetchPriceStapels } from "./Stapels.js";
 import { fetchPriceDell } from "./Dell.js";
+import { cors  } from "cors";
 
 const app = express();
+app.use(cors())
+
 
 app.get('/price', async function(req, res) {
     res.json([
