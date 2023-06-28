@@ -15,7 +15,7 @@ export const fetchPriceStapels = async (partNumber) => {
   // On this new page:
   // - open the "http://quotes.toscrape.com/" website
   // - wait until the dom content is loaded (HTML is ready)
-  let url="https://www.staples.com/"+partNumber+"/directory_"+partNumber+"?sby=1";
+  let url="https://www.staples.com/"+partNumber+"/directory_"+partNumber;
   console.log("URL IS "+url);
   await page.goto(url, {
     waitUntil: "domcontentloaded",
