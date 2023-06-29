@@ -1,12 +1,22 @@
 import puppeteer from "puppeteer";
+import 'dotenv/config'
 
 export const fetchPriceCDWG = async (partNumber) => {
   // Start a Puppeteer session with:
   // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
   // - no default viewport (`defaultViewport: null` - website page will in full width and height)
   const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: null,
+    args: [
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote",
+    ],
+    headless:true,
+    executablePath:
+      process.env.NODE_ENV === "production"
+        ? process.env.PUPPETEER_EXECUTABLE_PATH
+        : puppeteer.executablePath(),
   });
 
   // Open a new page
