@@ -18,11 +18,11 @@ app.use(cors())
 app.get('/price', async function (req, res) {
 
   let hCodedPart = [
-    { partNo="P582-006", cdwPrice="21.99", cdwgPrice="21.94" },
-    { partNo="P582-006-V2", cdwPrice="28.99", cdwgPrice="28.92" },
-    { partNo="PA-BT-002", cdwPrice="133.99", cdwgPrice="133.66" },
-    { partNo="UCSB-MLOM-40G-04", cdwPrice="814.99", cdwgPrice="812.95" },
-    { partNo="UCSB-MLOM-40G-03", cdwPrice="848.99", cdwgPrice="846.87" }]
+    { partNo:"P582-006", cdwPrice:"21.99", cdwgPrice:"21.94" },
+    { partNo:"P582-006-V2", cdwPrice:"28.99", cdwgPrice:"28.92" },
+    { partNo:"PA-BT-002", cdwPrice:"133.99", cdwgPrice:"133.66" },
+    { partNo:"UCSB-MLOM-40G-04", cdwPrice:"814.99", cdwgPrice:"812.95" },
+    { partNo:"UCSB-MLOM-40G-03", cdwPrice:"848.99", cdwgPrice:"846.87" }]
 
 
   for (let i = 0; i < hCodedPart.length; i++) {
