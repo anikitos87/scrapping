@@ -30,6 +30,7 @@ app.get('/price', async function (req, res) {
     if (part == hCodedPart[i].partNo) {
       res.json([{ value: 1, label: 'Cdw', price: hCodedPart[i].cdwPrice },
       { value: 2, label: 'Cdwg', price: hCodedPart[i].cdwgPrice }])
+      return
 
     }
 
@@ -60,33 +61,7 @@ app.get('/price', async function (req, res) {
 
 
 
-  // if (req.query.id == "1") {
-  //   console.log("Request")
-  //   let cdwPrice = "Unable to fetch.";
-  //   let cdwgPrice = "Unable to fetch.";
-
-  //   cdwPrice = await fetchPriceCDW(req.query.part);
-  //   cdwgPrice=await fetchPriceCDWG(req.query.part);
-
-  //   res.json({ value: 1, label: 'Cdw', price: cdwPrice },
-  //   { value: 2, label: 'Cdwg', price: cdwgPrice })
-
-
-
-
-
-
-
-  // }
-  // if (req.query.id == "2") {
-  //   console.log("Request")
-  //   let cdwgPrice = "Unable to fetch.";
-
-  //   cdwgPrice = await fetchPriceCDW(req.query.part);
-  //   res.json({ value: 2, label: 'Cdwg', price: cdwgPrice })
-
-  // }
-
+  
 
 
 
